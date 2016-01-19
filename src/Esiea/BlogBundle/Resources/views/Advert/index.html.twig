@@ -1,0 +1,28 @@
+{# src/Esiea/BlogBundle/Resources/views/Advert/index.html.twig #}
+
+
+{% extends "EsieaBlogBundle::layout.html.twig" %}
+
+{% block title %}Accueil {{ parent() }} {% endblock %}
+
+{% block esieablog_body %}
+
+    <h2>Liste des recettes</h2>
+
+    <ul>
+        {% for advert in listAdverts %}
+            <li>
+                <a href="{{ path('esiea_blog_view', {'id': advert.id}) }}">
+                    {{ advert.titre }}
+                </a>
+                par {{ advert.auteur }},
+                le {{ advert.date|date('d/m/Y') }}
+            </li>
+        {% else %}
+            <li>Aucune annonce de recette</li>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

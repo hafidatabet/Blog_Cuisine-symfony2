@@ -1,0 +1,22 @@
+{# src/Esiea/BlocBundle/Resources/views/layout.html.twig #}
+
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {# sous-titre commun à toutes les pages #}
+    <h1>Cuisine d'ici et d'ailleurs</h1>
+
+    <hr>
+ 
+
+    {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+    {% block esieablog_body %}
+    {% endblock %}
+
+{% endblock %}

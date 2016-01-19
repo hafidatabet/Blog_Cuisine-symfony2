@@ -1,0 +1,27 @@
+{# src/Esiea/BlogBundle/Resources/views/Advert/add.html.twig #}
+
+
+{% extends "EsieaBlogBundle::layout.html.twig" %}
+
+
+{% block title %} Ajouter une nouvelle annonce {% endblock %}
+
+{% block esieablog_body %}
+
+
+    <h2>Ajouter une annonce</h2>
+
+    {{ include("EsieaBlogBundle:Advert:formulaire.html.twig") }}
+
+    <p>
+
+        <a href="{{ path('esiea_blog_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste des annonces
+        </a>
+
+    </p>
+
+{% endblock %}
+
+

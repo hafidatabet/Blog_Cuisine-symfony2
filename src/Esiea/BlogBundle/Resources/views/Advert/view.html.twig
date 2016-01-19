@@ -1,0 +1,41 @@
+{# src/esiea/BlogBundle/Resources/view/Advert/view.html.twig #}
+
+{% extends "EsieaBlogBundle::layout.html.twig" %}
+
+{% block titre %}
+  Lecture d'une recette - {{ parent() }}
+{% endblock %}
+
+{% block esieablog_body %}
+
+  <h2>{{ advert.titre }}</h2>
+  <i1>Par {{ advert.auteur }}, le {{ advert.date|date('d/m/Y') }}</i1>
+
+
+  <div class="well">
+
+   <i2> Les ingrédients : {{ advert.ingredients }} </i2>
+  </div>
+
+  <div class="well">
+
+   <i3> La préparation : {{ advert.preparation }} </i3>
+  </div>
+
+
+  <p>
+    <a href="{{ path('esiea_blog_home') }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      Retour à la liste des recettes
+    </a>
+    <a href="{{ path('esiea_blog_edit', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-edit"></i>
+      Modifier la recette
+    </a>
+    <a href="{{ path('esiea_blog_delete', {'id': advert.id}) }}" class="btn btn-danger">
+      <i class="glyphicon glyphicon-trash"></i>
+      Supprimer la recette
+    </a>
+  </p>
+
+{% endblock %}

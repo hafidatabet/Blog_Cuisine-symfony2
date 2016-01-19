@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: blogHC
+    database_user: root
+    database_password: dqcqdjw1=
+    mailer_transport: mail
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 063bc4c1d0b26de16a63421b89d1974b354552a2

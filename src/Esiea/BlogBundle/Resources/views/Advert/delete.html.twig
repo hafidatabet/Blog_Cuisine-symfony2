@@ -1,0 +1,39 @@
+{# src/Esiea/BlogBundle/Resources/views/Advert/delete.html.twig #}
+
+{% extends "EsieaBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Supprimer une annonce - {{ parent() }}
+{% endblock %}
+
+{% block esieablog_body %}
+
+    <h2>Supprimer votre annonce</h2>
+
+    <p>
+    Etes-vous certain de vouloir supprimer l'annonce "{{ advert.titre }}" ?
+  </p>
+
+  {# On met l'id de l'annonce dans la route de l'action du formulaire #}
+  <form action="{{ path('esiea_blog_delete', {'id': advert.id}) }}" method="post">
+
+    <p>
+        <a href="{{ path('esiea_blog_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste des annonces
+        </a>
+
+        <a href="{{ path('esiea_blog_view', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à l'annonce
+        </a>
+
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {# Ceci va générer le champ CSRF #}
+    {{ form_rest(form) }}
+  </form>
+
+
+    </p>
+
+{% endblock %}

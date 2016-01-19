@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /Users/Dadoo/Desktop/symfony_Chesnais_Tabet/app/config/routing_dev.yml

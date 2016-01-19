@@ -1,0 +1,7 @@
+esiea_blog:
+    resource: "@EsieaBlogBundle/Resources/config/routing.yml"
+    prefix:   /Blog_Cuisine
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

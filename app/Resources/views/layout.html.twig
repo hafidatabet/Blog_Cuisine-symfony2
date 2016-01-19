@@ -1,0 +1,65 @@
+{# app/Resources/views/layout.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Le blog de Cuisine de Myriam et hafida{% endblock %}</title>
+
+    {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/originalite.css">
+    {% endblock %}
+</head>
+
+<body>
+<div class="container">
+    <div id="header" class="jumbotron">
+        <h1>Blog de Cuisine M&H</h1>
+        <p1>
+            La vraie cuisine est une forme d’art, un cadeau à partager.
+        </p1>
+        <p>
+            <a class="btn btn-primary btn-lg" href="https://www.facebook.com/groups/1669608549949358/">
+                Go sur notre page facebook -->
+            </a>
+        </p>
+    </div>
+
+
+    <div class="row">
+        <div id="menu" class="col-md-4">
+            <h3>Menu principal</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{ path('esiea_blog_home') }}">Accueil</a></li>
+                <li><a href="{{ path('esiea_blog_add') }}">Ajouter une nouvelle recette</a></li>
+            </ul>
+
+            <h4>Les dernières recettes</h4>
+            {{ render(controller("EsieaBlogBundle:Advert:menu", {'limit': 4})) }}
+        </div>
+
+        <div id="preparation" class="col-md-8">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p2>            Copyright: Chesnais Myriam et Tabet Hafida</p2>
+    </footer>
+</div>
+
+{% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
